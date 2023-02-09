@@ -1,6 +1,9 @@
 name: Github Actions Demo
 run-name: ${{ github.actor }} is testing out Github Actions 🚀
 on: [push]
+env: 
+  MY_SECRET: env_secret
+  MY_VARIABLE: env_variable
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -18,3 +21,4 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}"
       - run: echo "this is my secret, $MY_SECRET"
       - run: echo "this si my variable, $MY_VARIABLE"
+      - run: echo "secret, ${{ vars.MY_SECRET }}. variable, ${{ MY_VARIABLE }}"

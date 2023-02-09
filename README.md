@@ -31,6 +31,19 @@ Expression looks like ${{ expression }}
 Github warns here
 >Warning: When creating workflows and actions, you should always consider whether your code might execute untrusted input from possible attackers. Certain contexts should be treated as untrusted input, as an attacker could insert their own malicious content. For more information, see "Understanding the risk of script injections."
 
+Example:
+    * env:
+        MyValue: ${{ 0xff }}
+
+github.token is a sensitive api-token, it gets default masked, from the log, but is there. It has access to the repository, on behalf of GitHub Apps
+
+env variables can be set on steps, jobs or workflows, and are accessible as the normal $Env_name in all cases. It can albe be accessed through the contexts aka ${{ workflow }} for instance
+
+
+In settings->secrets and variables-> Actions you can set configuration variables for your repository - this seems weird? they surely can be set in the workflow file as well?
+Configuration variables are not environment variables, they are accessbile in the vars context
+
+
 ## Exfilling data works just fine
 
 It is possible to just curl from the run and get data
