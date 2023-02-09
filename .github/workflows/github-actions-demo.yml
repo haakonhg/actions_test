@@ -16,5 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}"
-      - run: echo $MY_SECRET
-      - run: echo $MY_VARIABLE
+      - run: echo "this is my secret, $MY_SECRET"
+      - run: echo "this si my variable, $MY_VARIABLE"
