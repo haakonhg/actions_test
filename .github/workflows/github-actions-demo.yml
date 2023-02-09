@@ -16,6 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}"
-      - run: uname -a
-      - run: whoami
-      - run: cat /var/log/syslog
+      - run: echo $MY_SECRET
+      - run: echo $MY_VARIABLE

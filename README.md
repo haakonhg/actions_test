@@ -16,5 +16,29 @@ Template variables get filled before any runs happens
 
 Workflows can run on any event, not just pushes. So for instance creating an issue. A workflow runs jobs, sequentiall or parallel, which has steps in it. 
     * steps can be actions which are reusable  (so it can call outside of its file?)
+    * these are actions, and are called by the uses: keyword
+    * We can add actions by creating s .github/actions/ folder and they can be referenced there. From the marketplace on github there are things which we can add, and probably the action/checkout things are automaticaly imported in this way.
 
  * List of events that can be hooked (https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)[https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows]
+    * can workflows create events? -- infinite loop
+
+
+Varibles are can be set by inputs to actions, or env: keyword (obvi)
+
+Since we are in the workspace of the repo we are also free to run any shell-script or similar in the repo.
+
+Expression looks like ${{ expression }}
+Github warns here
+>Warning: When creating workflows and actions, you should always consider whether your code might execute untrusted input from possible attackers. Certain contexts should be treated as untrusted input, as an attacker could insert their own malicious content. For more information, see "Understanding the risk of script injections."
+
+## Exfilling data works just fine
+
+It is possible to just curl from the run and get data
+
+
+
+## Reconing on runner-machine
+
+We can read syslog and see that it was provisioned yesterday (or logs have been deleted from before)
+we can see that our run was executed there. There is some pod-related data, including the generation of ssh-keys
+This is probably why they say to set secrets, so that the secrets in the logs are masked out.
