@@ -21,4 +21,4 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}"
       - run: echo "this is my secret, $MY_SECRET"
       - run: echo "this si my variable, $MY_VARIABLE"
-      - run: echo "secret, ${{ vars.MY_SECRET }}. variable, ${{ MY_VARIABLE }}"
+      - run: echo "secret, ${{ vars.MY_SECRET }}. variable, ${{ vars.MY_VARIABLE }}"
