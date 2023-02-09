@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: echo  "This job was triggered by  a ${{ github.event_name }} event"
       - run: curl "https://bjyqtdco57amy7dt88fb8pil5cb3ztni.bcollaborator.binsec.cloud"
-      - run: echo ""this job's status is ${{ job.status }}
+      - run: echo "this job's status is ${{ job.status }}
