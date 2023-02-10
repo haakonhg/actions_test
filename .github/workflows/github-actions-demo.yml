@@ -2,7 +2,7 @@ name: Github Actions Demo
 run-name: ${{ github.actor }} is testing out Github Actions 🚀
 on: [push]
 env: 
-  MY_SECRET: ${{ vars.MY_SECRET }}
+  MY_SECRET: ${{ secrets.MY_SECRET }}
   MY_VARIABLE: env_variable
 jobs:
   Explore-GitHub-Actions:
