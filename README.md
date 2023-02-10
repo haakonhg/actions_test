@@ -55,3 +55,8 @@ It is possible to just curl from the run and get data
 We can read syslog and see that it was provisioned yesterday (or logs have been deleted from before)
 we can see that our run was executed there. There is some pod-related data, including the generation of ssh-keys
 This is probably why they say to set secrets, so that the secrets in the logs are masked out.
+
+
+## self-hosted runner
+
+This is your own machine and it seems like it will just run whatever is in the workflow, so I guess it is possible to just take over the machines of anyone using this?
